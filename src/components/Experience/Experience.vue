@@ -4,12 +4,13 @@
 <div class=container>
 
 <icon skill="Laravel"/>
-<icon skill="Typescript"/>
 
 <icon skill="Vue"/>
+<icon skill="Typescript"/>
+<icon skill="PHP"/>
+
 <icon skill="Html"/>
 <icon skill="Node"/>
-<icon skill="PHP"/>
 <icon skill="MySQL"/>
 
 <icon skill="CSS"/>
@@ -31,6 +32,7 @@ export default {
 
 <style scoped>
 * {
+    padding-top:0px!important;
 }
 .container {
     display: flex;

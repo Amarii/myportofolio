@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-      <hamburger id="menu" class=button></hamburger>
 
     <full-page :options="options" id="fullpage">
 
@@ -11,27 +10,22 @@
 
       <div class="section">
         <div class="slide">
-          <project/>
+          <project image="project"/>
         </div>
 
-        <div class="slide">
-          <h3>Slide 2.2</h3>
-        </div>
-        <div class="slide">
-          <h3>Slide 2.3</h3>
+        <div id ="mobile" class="slide">
+          <project-details name="Space Evasion"/>
         </div>
       </div>
       <div class="section">
         <div class="slide">
-          <project/>
+          <project image="project"/>
         </div>
 
-        <div class="slide">
+        <div id="mobile" class="slide">
           <h3>Slide 2.2</h3>
         </div>
-        <div class="slide">
-          <h3>Slide 2.3</h3>
-        </div>
+
       </div>
     </full-page>
   </div>
@@ -40,14 +34,14 @@
 <script>
 import Home from "./components/Home.vue";
 import Project from "./components/Project.vue";
-import Hamburger from './components/Hamburger.vue'
+import ProjectDetails from  "./components/ProjectDetails.vue"
 
 export default {
   name: "app",
   components: {
     Home,
     Project,
-    Hamburger
+    ProjectDetails
   },
   data() {
     return {
@@ -59,7 +53,7 @@ export default {
         controlArrows: false,
         menu: "#menu",
         navigation: false,
-        anchors: ["home", "about", "projects"],
+        anchors: ["", "projectOne", "projectTwo"],
         sectionsColor: [
           "#990000",
           "#990000",
@@ -159,6 +153,9 @@ visibility: hidden;}
     
     .button{
     display:none;
+    }
+#mobile {
+  display:none!important;
 }
 }
 

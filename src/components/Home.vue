@@ -35,12 +35,10 @@
 <script>
 import Mybutton from '../components/Button.vue'
 import Experience from '../components/Experience/Experience.vue'
-import Contact from '../components/Contact.vue'
 export default {
     components: {
         Mybutton,
         Experience,
-        Contact
     }
 };
      // eslint-disable-next-line 
@@ -54,12 +52,26 @@ var mixinDetictingMobile = {
     }
   }
 }
+
+// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+let vh = window.innerHeight * 0.01;
+// Then we set the value in the --vh custom property to the root of the document
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+window.addEventListener('resize', () => {
+  // We execute the same script as before
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+});
 </script>
 
-<style>
+<style scoped>
 .home {
+  height: calc(var(--vh, 1vh) * 100);
     padding: 20px;
-    font-family: 'Spectral', serif;}
+    font-family: 'Spectral', serif;
+    }
+    
 
 @media screen and (min-width: 900px){
 
@@ -144,16 +156,12 @@ p {
   flex:2;
   padding-top:20vh;}
   
-img, li {
-
-}
 .profile {
   size: 50%;
 }
 
 img {
-  width: auto!important;
-  height: 25px!important;
+
 }
 h1 {
     font-size: 20px;

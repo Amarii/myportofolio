@@ -14,7 +14,7 @@ export default {
         }
     },
     data () {
-        return
+        return{}
 
     }
 
@@ -23,17 +23,21 @@ export default {
 
 <style scoped>
 * {
-  height: auto;
-  width: 60px;
-  margin-top:0;
+  display:flex;
+  width: 50px!important;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 p {
     font-size: 15px;
     color:grey;
 }
 img{
-    width:auto;
     height:50px!important;
+    width:100%!important;
 }
 
 </style>
